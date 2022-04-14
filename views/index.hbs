@@ -1,0 +1,17 @@
+{{#addScript "styles"}}
+<style type="text/css">
+    html, body { padding: 0; margin: 0; }
+</style>
+{{/addScript}}
+
+<h3>Hello, {{ hello }}</h3>
+
+{{#eachItems items "item"}}
+    <li class="{{ className }}">{{ rn }}</li>
+{{/eachItems}}
+
+{{#addScript "scripts"}}
+<script type="text/javascript">
+    console.log("hi");
+</script>
+{{/addScript}}

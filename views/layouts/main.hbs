@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
+    {{{ _body.styles }}}
+    {{!--     
+    {{#each css}}
+        <link rel="stylesheet" href="/css/{{this}}">
+    {{/each}}
+    --}}
+</head>
+<body>
+    <header>
+        {{> header }}
+    </header>
+    <div id="">
+        <section>
+            {{> left }}
+        </section>
+        <section>
+            {{{ body }}}
+        </section>
+    </div>
+    <footer>
+        {{> footer }}
+    </footer>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    {{{ _body.scripts }}}
+    {{!-- 
+    {{#each js}}
+        <script src="/js/{{this}}"></script>
+    {{/each}}
+     --}}
+</body>
+</html>
