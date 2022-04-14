@@ -1,11 +1,5 @@
-const express = require("express");
-const router = express.Router();
+import mainRouter from "./main/index";
 
-router.get('/', (req, res, next)=>{
-  res.status(200).render('index', {
-    title: 'Express',
-    items: 30
-  });
-});
-
-module.exports = router;
+export {
+    mainRouter
+}

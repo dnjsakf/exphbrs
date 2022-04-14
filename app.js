@@ -1,24 +1,27 @@
-require("dotenv").config();
+import process from "process";
+import path from "path";
+import express from "express";
+import session from "express-session";
+import { create as exphrs } from "express-handlebars";
+import favicon from "serve-favicon";
+import cookieParser from "cookie-parser";
+import morgan from "morgan";
+import flash from "connect-flash/lib/flash";
+import methodOverride from "method-override";
+import dotenv from "dotenv";
+import { logger, stream } from "./config/logging";
+import {
+    mainRouter
+} from "./routes";
+import createError from "http-errors";
 
-const process = require("process");
-const path = require("path");
-const express = require("express");
-const session = require("express-session");
-const exphrs = require("express-handlebars");
-const favicon = require("serve-favicon");
-const cookieParser = require("cookie-parser");
-const morgan = require("morgan");
-const flash = require("connect-flash");
-const methodOverride = require("method-override");
-
-const { logger, stream } = require("./config/logging");
-const indexRouter = require("./routes/index");
+dotenv.config();
 
 const DIRNAME = path.resolve();
 const PORT = process.env.EXPRESS_PORT||3000;
 
 const app = express();
-const hrs = exphrs.create({
+const hrs = exphrs({
     extname: "hbs", // layout ext
     defaultLayout: "main",
     layoutsDir: path.join(DIRNAME, "views/layouts/"),
@@ -47,21 +50,8 @@ const hrs = exphrs.create({
 // Set View
 app.engine(".hbs", hrs.engine);
 app.set("view engine", ".hbs"); // views ext
-app.set('views', path.join(DIRNAME, "views"));
+app.set('views', path.join(DIRNAME, "views/routes"));
 app.enable('view cache');
-
-// Error Handler
-// app.use((req, res, next)=>{
-//     const err = new Error("Not Found");
-//     err.status = 404;
-//     next(err);
-// });
-// app.use((err, req, res)=>{
-//     res.locals.message = err.message;
-//     res.locals.error = req.app.get("env") === "development" ? err : {};
-//     res.status(err.status || 500);
-//     res.render("error");
-// });
 
 // Set bodyParser
 app.use(express.json());
@@ -91,7 +81,18 @@ app.use("/bootstrap", express.static(path.join(DIRNAME,"/node_modules/bootstrap/
 app.use(favicon(path.join(DIRNAME, "public", "favicon.ico")));
 
 // Set Routes
-app.use("/", indexRouter);
+app.use("/", mainRouter);
+
+// Error Handler
+app.use((req, res, next)=>{
+    next(createError(404, "Not Found"));
+});
+app.use((err, req, res)=>{
+    res.locals.message = err.message;
+    res.locals.error = req.app.get("env") === "development" ? err : {};
+    res.status(err.status || 500);
+    res.render("error");
+});
 
 // Run Server
 app.listen(PORT, ()=>{
