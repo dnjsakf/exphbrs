@@ -1,3 +1,4 @@
+import path from "path";
 import winstonDaily from "winston-daily-rotate-file";
 import winston, { format } from "winston";
 
@@ -17,7 +18,7 @@ const logger = winston.createLogger({
         new winstonDaily({
             level: 'info',
             datePattern: 'YYYYMMDD',
-            dirname: './../logs',
+            dirname: path.join(__dirname, '../../logs'),
             filename: `appName_%DATE%.log`,
             maxSize: null,
             maxFiles: 14
@@ -29,6 +30,6 @@ const stream = {
     write(message){
       logger.info(message)
     }
-}
+};
 
 export { logger, stream };

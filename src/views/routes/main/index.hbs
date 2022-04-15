@@ -6,9 +6,7 @@
 
 <h3>Hello, {{ hello }}</h3>
 
-{{#eachItems items "item"}}
-    <li class="{{ className }}">{{ rn }}</li>
-{{/eachItems}}
+{{> "list/item" rows=5 }}
 
 {{#addScript "scripts"}}
 <script type="text/javascript">

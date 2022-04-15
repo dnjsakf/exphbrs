@@ -1,0 +1,38 @@
+[2022-04-15 12:19:42][info] - port: 3000
+[2022-04-15 12:22:07][info] - port: undefined
+[2022-04-15 12:22:21][info] - port: 3000
+[2022-04-15 12:22:34][info] - port: 3000
+[2022-04-15 12:22:38][info] - ::1 - - [15/Apr/2022:03:22:38 +0000] "GET / HTTP/1.1" 200 1030 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36 NetHelper70"
+
+[2022-04-15 12:22:38][info] - ::1 - - [15/Apr/2022:03:22:38 +0000] "GET /bootstrap/js/bootstrap.min.js HTTP/1.1" 200 59219 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36 NetHelper70"
+
+[2022-04-15 12:22:38][info] - ::1 - - [15/Apr/2022:03:22:38 +0000] "GET /bootstrap/css/bootstrap.min.css HTTP/1.1" 200 163873 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36 NetHelper70"
+
+[2022-04-15 12:22:38][info] - ::1 - - [15/Apr/2022:03:22:38 +0000] "GET /bootstrap/css/bootstrap.css HTTP/1.1" 200 205484 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36 NetHelper70"
+
+[2022-04-15 12:22:38][info] - ::1 - - [15/Apr/2022:03:22:38 +0000] "GET /bootstrap/js/bootstrap.min.js.map HTTP/1.1" 200 219918 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36 NetHelper70"
+
+[2022-04-15 12:22:38][info] - ::1 - - [15/Apr/2022:03:22:38 +0000] "GET /bootstrap/css/bootstrap.min.css.map HTTP/1.1" 200 451427 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36 NetHelper70"
+
+[2022-04-15 12:22:38][info] - ::1 - - [15/Apr/2022:03:22:38 +0000] "GET /bootstrap/css/bootstrap.css.map HTTP/1.1" 200 538014 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36 NetHelper70"
+
+[2022-04-15 12:22:38][info] - ::1 - - [15/Apr/2022:03:22:38 +0000] "GET /favicon.ico HTTP/1.1" 200 1803 "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36 NetHelper70"
+
+[2022-04-15 12:23:13][info] - port: 3000
+[2022-04-15 12:23:37][info] - port: 3000
+[2022-04-15 12:24:05][info] - port: 3000
+[2022-04-15 19:03:39][info] - port: 3000
+[2022-04-15 19:04:13][info] - ::1 - - [15/Apr/2022:10:04:13 +0000] "GET /bootstrap/css/bootstrap.css HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36 NetHelper70"
+
+[2022-04-15 19:04:13][info] - ::1 - - [15/Apr/2022:10:04:13 +0000] "GET /bootstrap/css/bootstrap.min.css HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36 NetHelper70"
+
+[2022-04-15 19:04:13][info] - ::1 - - [15/Apr/2022:10:04:13 +0000] "GET /bootstrap/js/bootstrap.min.js HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36 NetHelper70"
+
+[2022-04-15 19:04:13][info] - ::1 - - [15/Apr/2022:10:04:13 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36 NetHelper70"
+
+[2022-04-15 19:04:13][info] - ::1 - - [15/Apr/2022:10:04:13 +0000] "GET /bootstrap/css/bootstrap.css HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36 NetHelper70"
+
+[2022-04-15 19:04:13][info] - ::1 - - [15/Apr/2022:10:04:13 +0000] "GET /bootstrap/css/bootstrap.min.css HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36 NetHelper70"
+
+[2022-04-15 19:04:13][info] - ::1 - - [15/Apr/2022:10:04:13 +0000] "GET /bootstrap/js/bootstrap.min.js HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36 NetHelper70"
+

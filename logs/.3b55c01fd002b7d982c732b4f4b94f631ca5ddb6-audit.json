@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 14
+    },
+    "auditLog": "C:\\Users\\easycore\\Desktop\\ACS본사\\00.개인\\02.허정운\\scripts\\node\\expweb\\logs\\.3b55c01fd002b7d982c732b4f4b94f631ca5ddb6-audit.json",
+    "files": [
+        {
+            "date": 1649992782867,
+            "name": "C:\\Users\\easycore\\Desktop\\ACS본사\\00.개인\\02.허정운\\scripts\\node\\expweb\\logs\\appName_20220415.log",
+            "hash": "05282b36d5fbf0821469e2a95171c732"
+        }
+    ],
+    "hashType": "md5"
+}
