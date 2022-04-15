@@ -36,3 +36,4 @@
 
 [2022-04-15 19:04:13][info] - ::1 - - [15/Apr/2022:10:04:13 +0000] "GET /bootstrap/js/bootstrap.min.js HTTP/1.1" 304 - "http://localhost:3000/" "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36 NetHelper70"
 
+[2022-04-15 20:38:01][info] - port: 3000
