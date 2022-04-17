@@ -1,3 +1,8 @@
 <div>
-    <span><a href="/auth/login">Login</a></span> / <span><a href="/auth/register">Register</a></span>
+    {{#if isAuth}}
+        <span><strong>{{ user.userNm }}</strong>님, 어서오세요</span><br>
+        <span><a href="/auth/logout">Logout</a></span> / <span><a href="/auth/register">Register</a></span>
+    {{else}}
+        <span><a href="/auth/login">Login</a></span> / <span><a href="/auth/register">Register</a></span>
+    {{/if}}
 </div>

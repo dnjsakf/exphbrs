@@ -18,6 +18,10 @@ router.post("/login",
         }
     }
 );
+router.get("/logout", (req, res)=>{
+    req.logout();
+    res.redirect("/");
+});
 
 router.get("/register", (req, res)=>{
     res.status(200).render("auth/register");

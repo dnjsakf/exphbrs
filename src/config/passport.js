@@ -1,6 +1,6 @@
 import passport from "passport";
 import { Strategy as LocalStrategy } from "passport-local";
-import User from "./../models/user";
+import UserModel from "./../models/user";
 
 passport.use(
     "local",
@@ -11,12 +11,12 @@ passport.use(
         },
         async function(userId, userPwd, cb){
             try {
-                const user = new User();
-                const data = await user.get({ userId: userId });
-                if( data ){
-                    const isValid = user.validPassword(userPwd, data.userPwd, data.userSalt);
+                const userModel = new UserModel();
+                const user = await userModel.get({ userId: userId });
+                if( user ){
+                    const isValid = userModel.validPassword(userPwd, user.userPwd, user.userSalt);
                     if( isValid ){
-                        return cb(null, data);
+                        return cb(null, user);
                     }
                     console.log("Invalid password");
                 } else {
@@ -34,11 +34,13 @@ passport.serializeUser((user, cb)=>{
     return cb(null, user.userId);
 });
 
-passport.deserializeUser((userId, cb)=>{
+passport.deserializeUser(async (userId, cb)=>{
     try {
-        const user = new User();
-        const data = user.get({ userId: userId });
-        return cb(null, data);
+        const userModel = new UserModel();
+        const user = await userModel.get({ userId: userId });
+        delete user.userPwd;
+        delete user.userSalt;
+        return cb(null, user);
 
     } catch ( error ){
         return cb(err);
