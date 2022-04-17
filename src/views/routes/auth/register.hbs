@@ -1,0 +1,26 @@
+<form method="post" action="/auth/register">
+    <input type="text" name="userId" placeholder="username"></br>
+    <input type="password" name="userPwd" placeholder="password"></br>
+    <input type="password" name="userPwdChk" placeholder="password"></br>
+    <input type="text" name="userNm" placeholder="userNm"></br>
+    <div>
+        <input type="radio" name="userGender" value="1"/>남
+        <input type="radio" name="userGender" value="2"/>여</br>
+    </div>
+    <button>Register</button>
+</form>
+
+{{#addScript "scripts"}}
+<script type="text/javascript">
+    const userId = document.querySelector('input[name="userId"]');
+    userId.addEventListener("keyup", function(e){
+        axios.post("/auth/dupl", {
+            userId: e.target.value
+        }).then(function(resp){
+            console.log(resp);
+        }).catch(function(err){
+            console.error(err);
+        });
+    });
+</script>
+{{/addScript}}

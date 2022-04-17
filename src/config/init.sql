@@ -1,11 +1,17 @@
--- 사용자테이블 생성
-CREATE TABLE CM_USER (
+-- 사용자 테이블 생성
+CREATE TABLE IF NOT EXISTS CM_USER (
     USER_ID         VARCHAR(100)    NOT NULL COMMENT '사용자 ID',
+    USER_PWD        VARCHAR(256)    NOT NULL COMMENT '사용자 비밀번호',
+    USER_SALT       VARCHAR(64)     NOT NULL COMMENT '사용지 SALT',
     USER_NM         VARCHAR(100)    NOT NULL COMMENT '사용자 명',
     USER_GENDER     VARCHAR(1)      COMMENT '사용자 성별',
+    REG_USER_ID     VARCHAR(100)    COMMENT '등록자 ID',
+    REG_DTTM        DATETIME        COMMENT '등록일시',
+    UPD_USER_ID     VARCHAR(100)    COMMENT '수정자 ID',
+    UPD_DTTM        DATETIME        COMMENT '수정일시',
     UNIQUE KEY CM_USER_PK ( USER_ID )
 )
 ENGINE=InnoDB
 DEFAULT CHARSET=utf8
-COMMENT='사용자테이블'
+COMMENT='사용자'
 ;

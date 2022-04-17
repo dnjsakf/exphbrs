@@ -1,5 +1,7 @@
-import mainRouter from "./main/index";
+import mainRouter from "./main";
+import authRouter from "./auth";
 
 export {
-    mainRouter
+    mainRouter,
+    authRouter
 }

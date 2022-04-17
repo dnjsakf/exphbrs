@@ -1,11 +1,9 @@
-const CryptoJS = require('crypto-js');
+import CryptoJS from "crypto-js";
 
-const DEFAULT_SECRET_KEY = "yourscretkey";
-
-class CryptAES {
+class Crypt {
     static secretKey;
     static {
-        this.secretKey = process.env.SECRET_KEY||DEFAULT_SECRET_KEY;
+        this.secretKey = process.env.SECRET_KEY||"yourscretkey";
     }
     static encrypt(decrypted, secretKey){
         return CryptoJS.AES.encrypt(decrypted, secretKey||this.secretKey).toString();
@@ -35,4 +33,4 @@ if( process.argv.length > 3 && process.argv[3] ){
     }
 }
 
-module.exports = CryptAES;
+module.exports = Crypt;

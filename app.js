@@ -11,11 +11,15 @@ import flash from "connect-flash/lib/flash";
 import methodOverride from "method-override";
 import compression from "compression";
 
+import passport from "./src/config/passport";
 import hrs from "./src/config/exphbs";
 import { logger, stream } from "./src/config/logging";
-import { mainRouter } from "./src/routes";
 
-dotenv.config();
+import { mainRouter, authRouter } from "./src/routes";
+
+dotenv.config({
+    path: ".env.real"
+});
 
 const app = express();
 
@@ -56,10 +60,16 @@ app.use(methodOverride()); // RESTful PUT/DELETE 등 처리
 // Set statics
 app.use("public", express.static(path.join(__dirname, "src/public")));
 app.use("/bootstrap", express.static(path.join(__dirname,"node_modules/bootstrap/dist")));
+app.use("/axios", express.static(path.join(__dirname,"node_modules/axios/dist")));
 app.use(favicon(path.join(__dirname, "public", "favicon.ico")));
+
+// Set passport
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Set Routes
 app.use("/", mainRouter);
+app.use("/auth", authRouter);
 
 // Error Handler
 app.use((req, res, next)=>{
