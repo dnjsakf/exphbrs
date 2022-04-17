@@ -1,6 +1,6 @@
 import passport from "passport";
 import { Router } from "express";
-import User from "../../models/user";
+import UserModel from "../../models/user";
 
 const router = Router();
 
@@ -13,11 +13,9 @@ router.post("/login",
         failureRedirect: "/auth/login"
     }),
     (err, req, res, next)=>{
-        console.log( err );
-        if( err ) {
+        if( err ){
             next(err);
         }
-        console.log("You are logged in!");
     }
 );
 
@@ -26,28 +24,27 @@ router.get("/register", (req, res)=>{
 });
 router.post("/register", async (req, res)=>{
     const regData = Object.assign({}, req.body);
-    const user = new User();
-    const data = await user.get(regData);
-    if( data ){
+    const userModel = new UserModel();
+    const user = await userModel.get(regData);
+    if( user ){
         return res.send({
             "success": false,
             "message": "이미 사용중인 사용자입니다."
         });
     }
-    const [ hash, salt ] = user.genPassword(regData.userPwd);
+    const [ hash, salt ] = userModel.genPassword(regData.userPwd);
     regData.userPwd = hash;
     regData.userSalt = salt;
     
-    const result = await user.insert(regData);
+    const result = await userModel.insert(regData);
 
     res.redirect('/auth/login');
 });
 
 router.post("/dupl", async (req,res)=>{
-    console.log( req.body );
-    const user = new User();
-    const data = await user.get(req.body);
-    if( data ){
+    const userModel = new UserModel();
+    const user = await userModel.get(req.body);
+    if( user ){
         res.send({
             "success": false,
             "message": "이미 사용중인 사용자입니다."

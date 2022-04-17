@@ -1,7 +1,7 @@
 import CryptoJS from "crypto-js";
 import DB from "./../config/database";
 
-class User {
+class UserModel {
     constructor(){
         this.TABLE_NAME = "CM_USER";
         this.COLUMNS = {
@@ -161,25 +161,4 @@ class User {
     }
 }
 
-async function addUser(){
-    const user = new User();
-    const data = {
-        userId: "admin",
-        userPwd: "admin",
-        userUpdPwd: "admin4",
-        userNm: "Administrator",
-        userGender: "1"
-    }
-
-    console.log( await user.save(data) );
-    console.log( await user.get(data) );
-    console.log( await user.updatePassword(data) );
-    console.log( await user.update(data) );
-    // console.log( await user.delete(data) );
-    console.log( await user.getAll() );
-
-    DB.pool.end();
-}
-// addUser();
-
-export default User;
+export default UserModel;
